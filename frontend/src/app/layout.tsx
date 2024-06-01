@@ -1,16 +1,18 @@
-import { ReactNode } from "react"
+import React from 'react';
+import { AntdRegistry } from '@ant-design/nextjs-registry';
+import { Layout } from 'antd';
+import HeaderComponent from '@/components/Header';
 
-type LayoutProps = {
-  children: ReactNode
-}
+const RootLayout = ({ children }: React.PropsWithChildren) => (
+  <html lang="en">
+    <body>
+      <AntdRegistry>
+        <Layout>
+          <HeaderComponent/>
+          {children}
+        </Layout></AntdRegistry>
+    </body>
+  </html>
+);
 
-export default function DashboardLayout({ children }: LayoutProps) {
-  return (
-    <html>
-      <body>
-        <div>{children}</div>
-      </body>
-    </html>
-  )
-}
-
+export default RootLayout;

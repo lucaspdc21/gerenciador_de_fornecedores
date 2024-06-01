@@ -1,8 +1,13 @@
+'use client';
+import React from 'react';
 
-export default function App() {
+
+
+const App: React.FC = () => {
+
   return (
-    <section className="flex flex-col-reverse md:flex-row self-center gap-2 items-center lg:gap-20">
-      <h1>Teste</h1>
-    </section>
+    <h1>teste</h1>
   )
-}
+};
+
+export default App;
