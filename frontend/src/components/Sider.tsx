@@ -8,9 +8,9 @@ import Link from 'next/link';
 const SiderComponent = () => {
 
     const menuItems = [
-        {label:<Link href="/">Home</Link>, key: 'home'},
-        {label:<Link href="/teste">About</Link>, key: 'about'},
-        {label:<Link href="/teste2">Contact</Link>, key: 'contact'},
+        {label:<Link href="/">Listar Fornecedores</Link>, key: 'home'},
+        {label:<Link href="/teste">Adicionar Fornecedores</Link>, key: 'about'},
+        {label:<Link href="/teste2">Relatórios</Link>, key: 'contact'},
     ];
     return (
         <Sider
