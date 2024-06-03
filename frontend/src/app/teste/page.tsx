@@ -1,9 +1,10 @@
+import RegisterNewCourseForm from "@/components/Register";
 import { Layout } from "antd";
 
 export default function Home() {
     return (
         <Layout>
-            <div>teste</div>
+            <RegisterNewCourseForm />
         </Layout>
     );
   }

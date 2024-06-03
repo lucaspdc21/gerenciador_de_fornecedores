@@ -15,14 +15,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Layout>
+        <Layout style={{ height:'100vh'}}>
           <HeaderComponent />
           <Layout hasSider >
             <SiderComponent />
-            <Content>
-              <div className="m-4 h-full bg-white">
+            <Content className="bg-white m-4 rounded-md">
                 {children}
-              </div>
             </Content>
           </Layout>
         </Layout>

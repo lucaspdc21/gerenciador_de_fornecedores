@@ -1,6 +1,11 @@
+import ForTable from "@/components/ForTable";
+import { Layout } from "antd";
+
 export default function Home() {
     return (
 
-      <div className="w-full">teste2</div>
+      
+        <ForTable />
+      
     );
   }
