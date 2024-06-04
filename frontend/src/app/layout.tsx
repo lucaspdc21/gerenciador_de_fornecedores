@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Layout style={{ height:'100vh'}}>
+        <Layout style={{ minHeight: '100vh' }}>
           <HeaderComponent />
           <Layout hasSider >
             <SiderComponent />

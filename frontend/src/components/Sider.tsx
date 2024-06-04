@@ -14,8 +14,7 @@ const SiderComponent = () => {
     ];
     return (
         <Sider
-            className='fixed'
-            style={{height: '100%'}}
+            style={{height: '85vh', paddingTop: '20px', backgroundColor:"white"}}
             breakpoint="lg"
             collapsedWidth="0"
             onBreakpoint={(broken) => {
@@ -27,6 +26,7 @@ const SiderComponent = () => {
             
         >
             <Menu
+            
             theme='light'
             mode='inline'
             defaultSelectedKeys={['home']}
