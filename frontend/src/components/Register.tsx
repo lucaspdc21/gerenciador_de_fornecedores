@@ -1,5 +1,5 @@
 "use client"
-import { Input, Form, Select, Switch, Space, DatePicker } from "antd"
+import { Input, Form, Select, Switch, Space, DatePicker, Flex } from "antd"
 
 const { TextArea } = Input
 
@@ -11,26 +11,21 @@ interface FormValues {
 
 function FormButton() {
   return (
-    <button
-      type="submit"
-      className={`
-        bg-blue-950 h-14 w-full rounded-md bg-primary text-lg font-bold text-white
-        hover:bg-blue-600
-       shadow focus:outline-none focus:ring
-      `}
-    >
-      Registrar Fornecedor
-    </button>
+    <Flex className="items-center w-full justify-center">
+      <button
+        type="submit"
+        className={`
+          bg-blue-950 h-14 w-full md:w-1/4 rounded-md bg-primary text-lg font-bold text-white
+          hover:bg-blue-600
+        shadow focus:outline-none focus:ring
+        `}
+      >
+        Registrar Fornecedor
+      </button>
+    </Flex>
   )
 }
 
-function Title() {
-  return (
-    <div className="m-4 flex w-auto items-center justify-center">
-      <h2 className="text-2xl font-bold">Adicionar Curso</h2>
-    </div>
-  )
-}
 
 export default function RegisterNewCourseForm() {
   const [form] = Form.useForm<FormValues>()
@@ -53,7 +48,7 @@ export default function RegisterNewCourseForm() {
             { min: 3, message: "O nome deve ter pelo menos 3 caracteres" },
           ]}
         >
-          <Input placeholder="Insira o nome do Fornecedor" size="middle" />
+          <Input placeholder="Insira o nome do Fornecedor" size="large" />
         </Form.Item>
         <Form.Item
           name="emailSupplier"
@@ -65,7 +60,7 @@ export default function RegisterNewCourseForm() {
             { min: 3, message: "O email deve ter pelo menos 3 caracteres" },
           ]}
         >
-          <Input placeholder="Insira o email do fornecedor" size="middle" />
+          <Input placeholder="Insira o email do fornecedor" size="large" />
         </Form.Item>
         <Form.Item
           name="siteSupplier"
@@ -77,7 +72,7 @@ export default function RegisterNewCourseForm() {
             { min: 3, message: "O Site deve ter pelo menos 3 caracteres" },
           ]}
         >
-          <Input placeholder="Insira o Site do fornecedor" size="middle" />
+          <Input placeholder="Insira o Site do fornecedor" size="large" />
         </Form.Item>
         <Space className="flex flex-wrap" size={["large", "small"]}>
           <Form.Item
@@ -90,7 +85,7 @@ export default function RegisterNewCourseForm() {
               { min: 3, message: "O nome CNPJ ter pelo menos 3 caracteres" },
             ]}
           >
-            <Input placeholder="Insira o CNPJ do Fornecedor" size="middle" />
+            <Input placeholder="Insira o CNPJ do Fornecedor" size="large" />
           </Form.Item>
           <Form.Item
             name="telSupplier"
@@ -102,7 +97,7 @@ export default function RegisterNewCourseForm() {
               { min: 3, message: "O telefone deve ter pelo menos 3 caracteres" },
             ]}
           >
-            <Input placeholder="Insira o Telefone do fornecedor" size="middle" />
+            <Input placeholder="Insira o Telefone do fornecedor" size="large" />
           </Form.Item>
           <Form.Item
             name="addSupplier"
@@ -114,7 +109,7 @@ export default function RegisterNewCourseForm() {
               { min: 3, message: "O endereço deve ter pelo menos 3 caracteres" },
             ]}
           >
-            <Input placeholder="Insira o endereço do fornecedor" size="middle" />
+            <Input placeholder="Insira o endereço do fornecedor" size="large" />
           </Form.Item>
         </Space>
         <Space className="flex flex-wrap" size={["middle", "small"]}>
