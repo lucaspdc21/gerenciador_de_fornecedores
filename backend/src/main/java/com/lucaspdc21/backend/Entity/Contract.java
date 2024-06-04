@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+
 
 @Entity
 public class Contract {
@@ -13,7 +15,9 @@ public class Contract {
 
     private String nome;
     private Integer duracao;
-    
+    @ManyToOne
+    private Supplier supplier;
+
     public Long getId() {
         return id;
     }
@@ -32,6 +36,12 @@ public class Contract {
     public void setDuracao(Integer duracao) {
         this.duracao = duracao;
     }
-
+    public Supplier getSupplier() {
+        return supplier;
+    }
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
+    }
+    
     
 }
