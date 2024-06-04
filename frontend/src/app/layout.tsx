@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import HeaderComponent from "@/components/Header";
 import SiderComponent from "@/components/Sider";
-import { Layout } from "antd";
+import { Flex, Layout } from "antd";
 import { Content } from "antd/es/layout/layout";
 
 
@@ -15,14 +15,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Layout style={{ minHeight: '100vh' }}>
-          <HeaderComponent />
-          <Layout hasSider >
+        <HeaderComponent />
+        <Layout hasSider style={{ minHeight: 'calc(100vh - 3.5rem)' }}>
+          <Flex>
             <SiderComponent />
-            <Content className="bg-white m-4 rounded-md">
-                {children}
-            </Content>
-          </Layout>
+          </Flex>
+          <Content className="bg-white m-4 rounded-md">
+              {children}
+          </Content>
         </Layout>
       </body>
     </html>

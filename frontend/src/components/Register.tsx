@@ -14,11 +14,12 @@ function FormButton() {
     <button
       type="submit"
       className={`
-       focus:ring-bg-300 h-14 w-full rounded-md bg-primary text-lg font-bold text-white 
+        bg-blue-950 h-14 w-full rounded-md bg-primary text-lg font-bold text-white
+        hover:bg-blue-600
        shadow focus:outline-none focus:ring
       `}
     >
-      Registrar Curso
+      Registrar Fornecedor
     </button>
   )
 }
@@ -40,44 +41,89 @@ export default function RegisterNewCourseForm() {
 
   return (
     <section className=" bg-white p-6">
-      <Title />
+      
       <Form layout="vertical" form={form} onFinish={onFinish}>
         <Form.Item
-          name="nameCourse"
+          name="nameSupplier"
           rules={[
             {
               required: true,
-              message: "Por favor, informe um nome para o curso",
+              message: "Por favor, informe o nome do Fornecedor",
             },
             { min: 3, message: "O nome deve ter pelo menos 3 caracteres" },
           ]}
         >
-          <Input placeholder="Insira o nome do curso" size="large" />
+          <Input placeholder="Insira o nome do Fornecedor" size="middle" />
         </Form.Item>
         <Form.Item
-          name="nameTeacher"
+          name="emailSupplier"
           rules={[
             {
               required: true,
-              message: "Por favor, informe o nome do professor",
+              message: "Por favor, informe o email de contato",
             },
-            { min: 3, message: "O nome deve ter pelo menos 3 caracteres" },
+            { min: 3, message: "O email deve ter pelo menos 3 caracteres" },
           ]}
         >
-          <Input placeholder="Insira o nome do professor" size="large" />
+          <Input placeholder="Insira o email do fornecedor" size="middle" />
+        </Form.Item>
+        <Form.Item
+          name="siteSupplier"
+          rules={[
+            {
+              required: true,
+              message: "Por favor, informe o site do fornecedor",
+            },
+            { min: 3, message: "O Site deve ter pelo menos 3 caracteres" },
+          ]}
+        >
+          <Input placeholder="Insira o Site do fornecedor" size="middle" />
         </Form.Item>
         <Space className="flex flex-wrap" size={["large", "small"]}>
+          <Form.Item
+            name="cnpjSupplier"
+            rules={[
+              {
+                required: true,
+                message: "Por favor, informe o CNPJ do Fornecedor",
+              },
+              { min: 3, message: "O nome CNPJ ter pelo menos 3 caracteres" },
+            ]}
+          >
+            <Input placeholder="Insira o CNPJ do Fornecedor" size="middle" />
+          </Form.Item>
+          <Form.Item
+            name="telSupplier"
+            rules={[
+              {
+                required: true,
+                message: "Por favor, informe o telefone de contato",
+              },
+              { min: 3, message: "O telefone deve ter pelo menos 3 caracteres" },
+            ]}
+          >
+            <Input placeholder="Insira o Telefone do fornecedor" size="middle" />
+          </Form.Item>
+          <Form.Item
+            name="addSupplier"
+            rules={[
+              {
+                required: true,
+                message: "Por favor, informe o endereço de fornecedor",
+              },
+              { min: 3, message: "O endereço deve ter pelo menos 3 caracteres" },
+            ]}
+          >
+            <Input placeholder="Insira o endereço do fornecedor" size="middle" />
+          </Form.Item>
+        </Space>
+        <Space className="flex flex-wrap" size={["middle", "small"]}>
           <Form.Item>
-            <Select size="large" placeholder="Escolha um Grupo">
+            <Select size="large" placeholder="Setor envolvido">
               <Select.Option value="Grupo 1">Grupo 1</Select.Option>
             </Select>
           </Form.Item>
-          <Form.Item>
-            <Select size="large" placeholder="Status">
-              <Select.Option value="Completo">Completo</Select.Option>
-            </Select>
-          </Form.Item>
-          <Form.Item label="Demo gratuita:">
+          <Form.Item label="Contratos ativos:">
             <Switch size="default"></Switch>
           </Form.Item>
           <Form.Item
@@ -97,7 +143,7 @@ export default function RegisterNewCourseForm() {
             { required: true, message: "Por favor, insira uma descrição!" },
           ]}
         >
-          <TextArea placeholder="Descrição do curso" rows={4} />
+          <TextArea placeholder="Descrição do Fornecedor" rows={4} />
         </Form.Item>
         <FormButton />
       </Form>
