@@ -1,10 +1,13 @@
 package com.lucaspdc21.backend.Entity;
 
 
+import java.util.Set;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Supplier {
@@ -26,6 +29,12 @@ public class Supplier {
     private String site;
 
     private String endereco;
+
+    @OneToMany
+    ( mappedBy = "supplier"  )
+    private Set<Contract> pedidos;
+
+
 
     public Long getId() {
         return id;
@@ -91,6 +100,12 @@ public class Supplier {
         this.endereco = endereco;
     }
 
-    
+    public Set<Contract> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(Set<Contract> pedidos) {
+        this.pedidos = pedidos;
+    }
     
 }
