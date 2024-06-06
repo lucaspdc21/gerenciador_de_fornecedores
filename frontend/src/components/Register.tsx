@@ -1,12 +1,17 @@
-"use client"
+"use client";
 import { Input, Form, Select, Switch, Space, DatePicker, Flex } from "antd"
+import { SuppliersService } from "../../services/SuppliersService"
 
 const { TextArea } = Input
 
 interface FormValues {
-  name: string
-  date: null
-  description: string
+  telefone: string
+  endereco: string
+  cnpj: string
+  email: string
+  site: string
+  nome: string
+  descricao: string
 }
 
 function FormButton() {
@@ -29,17 +34,39 @@ function FormButton() {
 
 export default function RegisterNewCourseForm() {
   const [form] = Form.useForm<FormValues>()
-  const onFinish = (values: FormValues) => {
-    alert("Curso registrado com sucesso!")
-    //trabalhar com os values
+  const suppliersService = new SuppliersService()
+  const onFinish = async (values: FormValues) => {
+    try {
+      // Converta a data para o formato correto
+  
+      // Crie o objeto do fornecedor
+      const supplier = {
+        nome: values.nome,
+        descricao: values.descricao,
+        email: values.email,
+        site: values.site,
+        cnpj: values.cnpj,
+        telefone: values.telefone,
+        endereco: values.endereco,
+    
+        // Adicione outros campos conforme necessário
+      };
+      // Chame o método create do SuppliersService
+      const response = await suppliersService.create(supplier);
+      alert("Fornecedor registrado com sucesso!");
+    } catch (error) {
+      console.error(error);
+      alert("Ocorreu um erro ao registrar o fornecedor.");
+    }
   }
+
 
   return (
     <section className=" bg-white p-6">
       
       <Form layout="vertical" form={form} onFinish={onFinish}>
         <Form.Item
-          name="nameSupplier"
+          name="nome"
           rules={[
             {
               required: true,
@@ -51,7 +78,7 @@ export default function RegisterNewCourseForm() {
           <Input placeholder="Insira o nome do Fornecedor" size="large" />
         </Form.Item>
         <Form.Item
-          name="emailSupplier"
+          name="email"
           rules={[
             {
               required: true,
@@ -63,7 +90,7 @@ export default function RegisterNewCourseForm() {
           <Input placeholder="Insira o email do fornecedor" size="large" />
         </Form.Item>
         <Form.Item
-          name="siteSupplier"
+          name="site"
           rules={[
             {
               required: true,
@@ -76,7 +103,7 @@ export default function RegisterNewCourseForm() {
         </Form.Item>
         <Space className="flex flex-wrap" size={["large", "small"]}>
           <Form.Item
-            name="cnpjSupplier"
+            name="cnpj"
             rules={[
               {
                 required: true,
@@ -88,7 +115,7 @@ export default function RegisterNewCourseForm() {
             <Input placeholder="Insira o CNPJ do Fornecedor" size="large" />
           </Form.Item>
           <Form.Item
-            name="telSupplier"
+            name="telefone"
             rules={[
               {
                 required: true,
@@ -100,7 +127,7 @@ export default function RegisterNewCourseForm() {
             <Input placeholder="Insira o Telefone do fornecedor" size="large" />
           </Form.Item>
           <Form.Item
-            name="addSupplier"
+            name="endereco"
             rules={[
               {
                 required: true,

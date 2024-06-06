@@ -1,72 +1,8 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table} from 'antd';
 import Link from 'next/link';
-
-
-const dataSource = [
-    {
-        key: '1',
-        name: 'Mike',
-        grupo: 'Dev',
-        contrato: 12,
-    },
-    {
-        key: '2',
-        name: 'John',
-        grupo: 'QA',
-        contrato: 24,
-    },
-    {
-        key: '3',
-        name: 'Alice',
-        grupo: 'UX',
-        contrato: 36,
-    },
-    {
-        key: '4',
-        name: 'Alice',
-        grupo: 'UX',
-        contrato: 36,
-    },
-    {
-        key: '5',
-        name: 'Alice',
-        grupo: 'UX',
-        contrato: 36,
-    },
-    {
-        key: '6',
-        name: 'Alice',
-        grupo: 'UX',
-        contrato: 36,
-    },
-    {
-        key: '7',
-        name: 'Alice',
-        grupo: 'UX',
-        contrato: 36,
-    },
-    {
-        key: '8',
-        name: 'Alice',
-        grupo: 'UX',
-        contrato: 36,
-    },    {
-        key: '9',
-        name: 'Alice',
-        grupo: 'UX',
-        contrato: 36,
-    },
-    {
-        key: '10',
-        name: 'Alice',
-        grupo: 'UX',
-        contrato: 36,
-    },
-];
-
-
+import { SuppliersService } from '../../services/SuppliersService';
 
 const columns = [
     {
@@ -78,9 +14,9 @@ const columns = [
         
     },
     {
-        title: 'Grupo',
-        dataIndex: 'grupo',
-        key: 'grupo',
+        title: 'Setor',
+        dataIndex: 'setor',
+        key: 'setor',
         sorter: (a: any, b: any) => a.grupo.localeCompare(b.grupo),
         className: 'bg-gray-200',
         
@@ -112,7 +48,21 @@ const columns = [
 
 
 const ForTable = () => {
-
+    const [dataSource, setDataSource] = useState([]);
+    useEffect(() => {
+        const sup_service = new SuppliersService();
+        sup_service.listAll()
+            .then(response => {
+                const data = response.data;
+                const formattedData = data.map((item: { id: any; nome: any; setor: any; contracts: string | any[]; }) => ({
+                    key: item.id,
+                    name: item.nome,
+                    grupo: item.setor,
+                    contrato: item.contracts.length,
+                }));
+                setDataSource(formattedData);
+            });
+    }, []);
     return (
         <Table
             className='w-full'

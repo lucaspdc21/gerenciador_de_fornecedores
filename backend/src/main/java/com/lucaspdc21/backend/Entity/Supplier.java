@@ -20,6 +20,8 @@ public class Supplier {
 
     private String descricao;
 
+    private String setor;
+
     private String email;
 
     private String cnpj;
@@ -32,7 +34,7 @@ public class Supplier {
 
     @OneToMany
     ( mappedBy = "supplier"  )
-    private Set<Contract> pedidos;
+    private Set<Contract> contracts;
 
 
 
@@ -101,11 +103,27 @@ public class Supplier {
     }
 
     public Set<Contract> getPedidos() {
-        return pedidos;
+        return contracts;
     }
 
-    public void setPedidos(Set<Contract> pedidos) {
-        this.pedidos = pedidos;
+    public void setPedidos(Set<Contract> contracts) {
+        this.contracts = contracts;
+    }
+
+    public String getSetor() {
+        return setor;
+    }
+
+    public void setSetor(String setor) {
+        this.setor = setor;
+    }
+
+    public Set<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(Set<Contract> contracts) {
+        this.contracts = contracts;
     }
     
 }

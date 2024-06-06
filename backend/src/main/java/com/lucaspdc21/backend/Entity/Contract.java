@@ -2,6 +2,7 @@ package com.lucaspdc21.backend.Entity;
 
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.lucaspdc21.backend.Enum.StatusContract;
 
 import jakarta.persistence.Column;
@@ -34,6 +35,7 @@ public class Contract {
     @Column(name = "status")
     private StatusContract status;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Supplier supplier;
