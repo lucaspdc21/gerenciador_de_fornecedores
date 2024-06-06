@@ -33,7 +33,8 @@ services:
   db:
     image: postgres:alpine3.18
     ports:
-      - "5432:5432"
+      #alterado a porta para 5433 (conflito de porta com o postgres local)
+      - "5433:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: senha
