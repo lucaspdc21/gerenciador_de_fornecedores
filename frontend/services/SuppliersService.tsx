@@ -15,6 +15,9 @@ export class SuppliersService{
     create(data: any){
         return axiosInstance.post('/api/suppliers', data);
     }
+    delete(id: number){
+        return axiosInstance.delete(`/api/suppliers/${id}`);
+    }
 
     listById(id: number){
         return axiosInstance.get(`/api/suppliers/${id}`);

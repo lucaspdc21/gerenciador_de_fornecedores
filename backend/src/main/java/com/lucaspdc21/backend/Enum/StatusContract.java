@@ -1,7 +1,7 @@
 package com.lucaspdc21.backend.Enum;
 
 public enum StatusContract {
-    PENDETE,
+    PENDENTE,
     EM_ANDAMENTO,
     FINALIZADO,
 

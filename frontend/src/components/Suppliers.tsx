@@ -55,7 +55,7 @@ const SuppliersComponent = ({ id }: SuppliersComponentProps) => {
             </Flex>
             <Divider plain>Contratos</Divider>
             <Flex vertical className=''>
-                <ContractTable />
+                <ContractTable id={id !== undefined ? id : 0}/>
             </Flex>
         </Flex>
   );

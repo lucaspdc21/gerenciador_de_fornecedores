@@ -3,6 +3,10 @@ package com.lucaspdc21.backend.Entity;
 
 import java.util.Set;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -32,8 +36,8 @@ public class Supplier {
 
     private String endereco;
 
-    @OneToMany
-    ( mappedBy = "supplier"  )
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "supplier")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Set<Contract> contracts;
 
 

@@ -11,6 +11,10 @@ interface DataType {
   status: string;
 }
 
+interface ContractTableProps {
+  id: number;
+}
+
 const columns: TableColumnsType<DataType> = [
   { title: 'Nome', dataIndex: 'name', key: 'name' },
   { title: 'Valor', dataIndex: 'valor', key: 'valor' },
@@ -25,11 +29,11 @@ const columns: TableColumnsType<DataType> = [
 ];
 
 
-const ContractTable = () => {
+const ContractTable = ({ id }: ContractTableProps) => {
   const [dataType, setDataType] = useState<DataType[]>([]);
   useEffect(() => {
     const sup_service = new SuppliersService();
-    sup_service.listById(1)
+    sup_service.listById(id)
       .then(response => {
         const contracts = response.data.contracts.map((contract: any, index: number) => ({
           key: index,

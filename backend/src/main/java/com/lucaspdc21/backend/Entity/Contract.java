@@ -21,7 +21,7 @@ public class Contract {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
     private String nome;
 
     @Column(name = "valor", precision = 20, scale = 2)

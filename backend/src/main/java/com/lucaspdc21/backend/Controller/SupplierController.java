@@ -2,6 +2,8 @@ package com.lucaspdc21.backend.Controller;
 
 import java.util.List;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
@@ -22,9 +24,11 @@ import org.springframework.web.server.ResponseStatusException;
 import com.lucaspdc21.backend.Entity.Supplier;
 import com.lucaspdc21.backend.Repository.SupplierRepository;
 
+import lombok.Data;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @CrossOrigin
@@ -66,9 +70,21 @@ public class SupplierController {
                     supplierRepository.save(supplier);
                     return se;
                 }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
-                    "Cliente não encontrado") );
+                    "Supplier not found") );
     }
+    
+    @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete( @PathVariable Long id ){
+        supplierRepository.findById(id)
+                .map( sup -> {
+                    supplierRepository.delete(sup );
+                    return sup;
+                })
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                        "Supplier not found") );
 
+    }
     @GetMapping
     public List<Supplier> getAllClients() {
         return supplierRepository.findAll();

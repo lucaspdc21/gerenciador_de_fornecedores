@@ -1,5 +1,5 @@
 "use client";
-import { Input, Form, Select, Switch, Space, DatePicker, Flex } from "antd"
+import { Input, Form, Select, Flex } from "antd"
 import { SuppliersService } from "../../services/SuppliersService"
 import { useEffect, useState } from "react";
 
@@ -68,7 +68,7 @@ export default function RegisterNewContract() {
           grupo: item.setor,
           contrato: item.contracts.length,
         }));
-        setSuppliers(formattedData); // armazena os fornecedores no estado
+        setSuppliers(formattedData); 
       });
   }, []);
 
@@ -100,7 +100,7 @@ export default function RegisterNewContract() {
         >
           <Input placeholder="Insira o valor do contrato" size="large" />
         </Form.Item>
-        <Form.Item name="setor">
+        <Form.Item name="status">
             <Select size="large" placeholder="Setor envolvido">
               <Select.Option value="PENDENTE">PENDENTE</Select.Option>
               <Select.Option value="EM_ANDAMENTO">EM_ANDAMENTO</Select.Option>
