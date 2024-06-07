@@ -2,9 +2,13 @@ package com.lucaspdc21.backend.Entity;
 
 import java.math.BigDecimal;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.lucaspdc21.backend.Enum.StatusContract;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -14,6 +18,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 
 @Entity
@@ -27,13 +32,11 @@ public class Contract {
     @Column(name = "valor", precision = 20, scale = 2)
     private BigDecimal valor;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "status")
     private StatusContract status;
-
+    
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "cliente_id")
+    @JoinColumn(name = "supplier_id")
     private Supplier supplier;
 
     public Long getId() {
