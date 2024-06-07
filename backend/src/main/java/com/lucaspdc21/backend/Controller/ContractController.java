@@ -11,7 +11,7 @@ import com.lucaspdc21.backend.Repository.ContractRepository;
 import com.lucaspdc21.backend.Repository.SupplierRepository;
 
 import java.util.Optional;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/api/contracts")
 public class ContractController {

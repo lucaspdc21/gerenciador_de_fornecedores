@@ -32,7 +32,7 @@ function FormButton() {
 }
 
 
-export default function RegisterNewCourseForm() {
+export default function RegisterNewSupplier() {
   const [form] = Form.useForm<FormValues>()
   const suppliersService = new SuppliersService()
   const onFinish = async (values: FormValues) => {

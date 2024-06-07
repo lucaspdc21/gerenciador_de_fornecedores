@@ -1,8 +1,9 @@
-import SuppliersComponent from "@/components/Suppliers";
-import Image from "next/image";
+import RegisterNewContract from "@/components/RegisterContract";
 
-export default function Contract() {
+export default function Supplier() {
+
+
   return (
-    <SuppliersComponent />
+    <RegisterNewContract/>
   );
 }

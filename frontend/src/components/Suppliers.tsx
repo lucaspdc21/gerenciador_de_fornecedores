@@ -14,11 +14,15 @@ interface Suppliers {
     endereco: string;
 }
 
-const SuppliersComponent = () => {
+interface SuppliersComponentProps {
+    id: number; 
+}
+
+const SuppliersComponent = ({ id }: SuppliersComponentProps) => {
     const [suppliers, setSuppliers] = useState<Suppliers>();
     useEffect(() => {
         const sup_service = new SuppliersService();
-        sup_service.listById(1)
+        sup_service.listById(id)
             .then(response => {
                 setSuppliers(response.data);
             })

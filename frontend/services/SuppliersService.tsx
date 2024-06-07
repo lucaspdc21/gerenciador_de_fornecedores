@@ -19,5 +19,8 @@ export class SuppliersService{
     listById(id: number){
         return axiosInstance.get(`/api/suppliers/${id}`);
     }
+    createContract(id: number, data: any){
+        return axiosInstance.post(`/api/contracts/${id}`, data);
+    }
 }
 

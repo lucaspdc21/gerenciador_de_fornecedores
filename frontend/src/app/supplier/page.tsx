@@ -1,14 +1,26 @@
-import RegisterNewCourseForm from "@/components/Register";
-import { Flex, Layout } from "antd";
-import Title from "antd/lib/typography/Title";
+"use client";
+import SuppliersComponent from "@/components/Suppliers";
+import { useParams, useSearchParams } from "next/navigation";
 
-export default function Home() {
-    return (
-        <Flex className="m-4" vertical>
-            <Flex align="center" >
-                <Title level={2} align-items>Cadastrar Fornecedores</Title>
-            </Flex>
-            <RegisterNewCourseForm />
-        </Flex>   
-    );
+
+export default function Supplier() {
+  interface Record {
+    id?: number;
+
   }
+  // recebimento das informações do supplier selecionado
+  const [searchParams] = useSearchParams();
+  const paramsObject = Object.fromEntries(Array.from(searchParams.entries()));
+  const recordString = paramsObject['1'];
+  let record: Record = {};
+  if (recordString) {
+    record.id = Number(recordString);
+  }
+
+
+  return (
+    <div>
+      <SuppliersComponent id={record.id !== undefined ? record.id : 0}/>
+    </div>
+  );
+}

@@ -35,7 +35,7 @@ const columns = [
         render: (_: any, record: any) => {
             return (
                 <div className='text-sky-500'>
-                    <Link href={`/supplier/${record.key}`}>
+                    <Link href={`/supplier?id=${record.key}`}>
                         Detalhes
                     </Link>
                 </div>
