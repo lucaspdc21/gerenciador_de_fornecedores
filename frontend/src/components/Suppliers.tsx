@@ -33,7 +33,7 @@ const SuppliersComponent = () => {
   return (
         <Flex vertical className='overflow-auto'>
             <Flex  gap={50} className='px-10 pt-10 h-full' >
-                <Avatar shape='square' size={80} src="/Microsoft_logo.svg"/>
+                <Avatar shape='square' size={80} src="/logo_supplier.png"/>
                 <Flex vertical gap={10}>
                     <h1> Nome:  {suppliers.nome}</h1>
                     <h1>Descrição:  {suppliers.descricao}</h1>

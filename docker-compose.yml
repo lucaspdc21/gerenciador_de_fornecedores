@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  # Serviço Backend
+  # backend 
   backend:
     build: ./backend
     ports:
@@ -13,6 +13,7 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    #teste de saúde
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/api/suppliers/test"]
       interval: 30s
@@ -20,7 +21,7 @@ services:
       retries: 5
 
 
-  # Serviço Frontend
+  # fronteed
   frontend:
     build: ./frontend
     ports:
@@ -29,12 +30,12 @@ services:
       backend:
         condition: service_healthy
 
-  # Banco de dados PostgreSQL
+  # banco de dados
   db:
     image: postgres:alpine3.18
     ports:
       #alterado a porta para 5433 (conflito de porta com o postgres local)
-      - "5432:5432"
+      - "5433:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: senha

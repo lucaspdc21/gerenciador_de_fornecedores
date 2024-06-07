@@ -34,11 +34,10 @@ const columns = [
         key: "action",
         render: (_: any, record: any) => {
             return (
-                <div className='text-sky-500 '>
-                    <Link href={{
-                        pathname : '/edit',
-                        query: { record: JSON.stringify(record) }
-                    }}>Editar</Link>
+                <div className='text-sky-500'>
+                    <Link href={`/supplier/${record.key}`}>
+                        Detalhes
+                    </Link>
                 </div>
             );
         },

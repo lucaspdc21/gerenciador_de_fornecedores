@@ -101,15 +101,7 @@ public class Supplier {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
-
-    public Set<Contract> getPedidos() {
-        return contracts;
-    }
-
-    public void setPedidos(Set<Contract> contracts) {
-        this.contracts = contracts;
-    }
-
+    
     public String getSetor() {
         return setor;
     }

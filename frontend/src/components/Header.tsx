@@ -9,7 +9,7 @@ const HeaderComponent = () => {
             <div>
                 <img width={100} src="/logo-generic.svg" />
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 text-white">
                 <Avatar size={42} src="/lucas.png"/>
                 <div>Lucas Pinheiro</div>
             </div>

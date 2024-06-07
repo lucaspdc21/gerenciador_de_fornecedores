@@ -1,20 +1,20 @@
 "use client";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table } from 'antd';
 import type { TableColumnsType } from 'antd';
+import { SuppliersService } from '../../services/SuppliersService';
 
 interface DataType {
   key: React.Key;
   name: string;
-  age: number;
-  address: string;
-  description: string;
+  valor: number;
+  status: string;
 }
 
 const columns: TableColumnsType<DataType> = [
-  { title: 'Name', dataIndex: 'name', key: 'name' },
-  { title: 'Age', dataIndex: 'age', key: 'age' },
-  { title: 'Address', dataIndex: 'address', key: 'address' },
+  { title: 'Nome', dataIndex: 'name', key: 'name' },
+  { title: 'Valor', dataIndex: 'valor', key: 'valor' },
+  { title: 'Status', dataIndex: 'status', key: 'status' },
   {
     
     title: 'Action',
@@ -24,49 +24,39 @@ const columns: TableColumnsType<DataType> = [
   },
 ];
 
-const data: DataType[] = [
-  {
-    key: 1,
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    description: 'My name is John Brown, I am 32 years old, living in New York No. 1 Lake Park.',
-  },
-  {
-    key: 2,
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    description: 'My name is Jim Green, I am 42 years old, living in London No. 1 Lake Park.',
-  },
-  {
-    key: 3,
-    name: 'Not Expandable',
-    age: 29,
-    address: 'Jiangsu No. 1 Lake Park',
-    description: 'This not expandable',
-  },
-  {
-    key: 4,
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-    description: 'My name is Joe Black, I am 32 years old, living in Sydney No. 1 Lake Park.',
-  },
-];
 
-const App: React.FC = () => (
+const ContractTable = () => {
+  const [dataType, setDataType] = useState<DataType[]>([]);
+  useEffect(() => {
+    const sup_service = new SuppliersService();
+    sup_service.listById(1)
+      .then(response => {
+        const contracts = response.data.contracts.map((contract: any, index: number) => ({
+          key: index,
+          name: contract.nome,
+          valor: contract.valor,
+          status: contract.status,
+        }));
+        setDataType(contracts);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
+
+  return(
   <Table
     columns={columns}
     pagination={{ pageSize: 3 }}
     scroll={{ y: 120 }}
     expandable={{
-      expandedRowRender: (record) => <p style={{ margin: 0 }}>{record.description}</p>,
+      expandedRowRender: (record) => <p style={{ margin: 0 }}>{record.status}</p>,
       rowExpandable: (record) => record.name !== 'Not Expandable',
 
     }}
-    dataSource={data}
+    dataSource={dataType}
   />
-);
+  );
+  };
 
-export default App;
+export default ContractTable;

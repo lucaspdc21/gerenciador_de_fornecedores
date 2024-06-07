@@ -9,8 +9,8 @@ const SiderComponent = () => {
 
     const menuItems = [
         {label:<Link href="/">Listar Fornecedores</Link>, key: 'home'},
-        {label:<Link href="/teste">Adicionar Fornecedores</Link>, key: 'about'},
-        {label:<Link href="/teste2">Relatórios</Link>, key: 'contact'},
+        {label:<Link href="/supplier">Adicionar Fornecedores</Link>, key: 'supplier'},
+        {label:<Link href="/contract">Adicionar Contrato</Link>, key: 'contract'},
     ];
     return (
         <Sider

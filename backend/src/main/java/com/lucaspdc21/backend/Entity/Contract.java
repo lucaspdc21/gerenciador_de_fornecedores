@@ -24,10 +24,6 @@ public class Contract {
 
     private String nome;
 
-    private Integer duracao;
-
-    private String descricao;
-
     @Column(name = "valor", precision = 20, scale = 2)
     private BigDecimal valor;
 
@@ -52,24 +48,14 @@ public class Contract {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public Integer getDuracao() {
-        return duracao;
-    }
-    public void setDuracao(Integer duracao) {
-        this.duracao = duracao;
-    }
+
     public Supplier getSupplier() {
         return supplier;
     }
     public void setSupplier(Supplier supplier) {
         this.supplier = supplier;
     }
-    public String getDescricao() {
-        return descricao;
-    }
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+
     public BigDecimal getValor() {
         return valor;
     }
