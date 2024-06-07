@@ -24,6 +24,8 @@ import com.lucaspdc21.backend.Repository.SupplierRepository;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @CrossOrigin
 @RestController
@@ -34,6 +36,11 @@ public class SupplierController {
         this.supplierRepository = supplierRepository;
     }
 
+    @GetMapping("/test")
+    public String getTest() {
+        return "Hello World";
+    }
+    
 
     @GetMapping("{id}")
     @ResponseStatus(HttpStatus.OK)

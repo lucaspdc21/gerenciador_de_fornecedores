@@ -14,7 +14,7 @@ services:
       db:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/api/suppliers/hello/lucas"]
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/suppliers/test"]
       interval: 30s
       timeout: 10s
       retries: 5
@@ -34,7 +34,7 @@ services:
     image: postgres:alpine3.18
     ports:
       #alterado a porta para 5433 (conflito de porta com o postgres local)
-      - "5433:5432"
+      - "5432:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: senha
