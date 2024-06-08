@@ -10,13 +10,13 @@ O build do projeto é feito utilizando o Docker, permitindo criar um ambiente is
 Utilizamos esse comando para fazer o build do Spring Boot e NextJS:
 
 ```bash
-docker compose build
+sudo docker compose build
 ```
 
 rodando a aplicação:
 
 ```bash
-docker compose up -d
+sudo docker compose up -d
 ```
 
 Acesse no seu navegador a [página inicial](http://localhost:3000) 
