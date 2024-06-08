@@ -4,6 +4,7 @@ import HeaderComponent from "@/components/Header/Header";
 import SiderComponent from "@/components/Sider";
 import { Flex, Layout } from "antd";
 import { Content } from "antd/es/layout/layout";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 
 
 export default function RootLayout({
@@ -24,7 +25,7 @@ export default function RootLayout({
             <SiderComponent />
           </Flex>
           <Content className="bg-white m-4 rounded-md">
-              {children}
+            <AntdRegistry>{children}</AntdRegistry>
           </Content>
         </Layout>
       </body>
