@@ -1,6 +1,7 @@
 "use client";
 import { Input, Form, Select, Switch, Space, DatePicker, Flex } from "antd"
-import { SuppliersService } from "../../services/SuppliersService"
+import { SuppliersService } from "../../../services/SuppliersService"
+import FormButton from "../generic/FormButton";
 
 const { TextArea } = Input
 
@@ -13,24 +14,6 @@ interface FormValues {
   nome: string
   descricao: string
 }
-
-function FormButton() {
-  return (
-    <Flex className="items-center w-full justify-center">
-      <button
-        type="submit"
-        className={`
-          bg-blue-950 h-14 w-full md:w-1/4 rounded-md bg-primary text-lg font-bold text-white
-          hover:bg-blue-600
-          shadow focus:outline-none focus:ring
-        `}
-      >
-        Registrar Fornecedor
-      </button>
-    </Flex>
-  )
-}
-
 
 export default function RegisterNewSupplier() {
   const [form] = Form.useForm<FormValues>()
@@ -169,7 +152,7 @@ export default function RegisterNewSupplier() {
         >
           <TextArea placeholder="Descrição do Fornecedor" rows={4} />
         </Form.Item>
-        <FormButton />
+        <FormButton text="Registrar Fornecedor" />
       </Form>
     </section>
   )

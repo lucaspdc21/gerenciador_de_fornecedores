@@ -1,5 +1,5 @@
-import PageTitle from "@/components/PageTitle";
-import RegisterNewCourseForm from "@/components/RegisterSupplier";
+import PageTitle from "@/components/generic/PageTitle";
+import RegisterNewCourseForm from "@/components/RegisterSupplier/RegisterSupplier";
 import { Flex} from "antd";
 
 

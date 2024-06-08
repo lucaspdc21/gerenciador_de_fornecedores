@@ -1,5 +1,5 @@
 import ForTable from "@/components/SupplierList";
-import PageTitle from "@/components/PageTitle";
+import PageTitle from "@/components/generic/PageTitle";
 import { Flex } from "antd";
 
 export default function Home() {

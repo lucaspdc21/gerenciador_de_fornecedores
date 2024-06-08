@@ -1,5 +1,5 @@
 "use client";
-import SuppliersComponent from "@/components/SupplierPage";
+import SuppliersComponent from "@/components/SupplierPage/SupplierPage";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 

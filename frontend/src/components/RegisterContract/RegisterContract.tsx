@@ -1,9 +1,10 @@
 /*eslint-disable*/ 
 //motivado por um falso positivo com o useEfect Hook
 "use client";
-import { Input, Form, Select, Flex } from "antd"
+import { Input, Form, Select} from "antd"
 import { SuppliersService } from "../../../services/SuppliersService"
 import { useEffect, useState } from "react";
+import FormButton from "../generic/FormButton";
 
 interface Supplier {
   key: number;
@@ -16,23 +17,6 @@ interface FormValues {
   status: string
   nome: string
   supplier : number
-}
-
-function FormButton() {
-  return (
-    <Flex className="items-center w-full justify-center">
-      <button
-        type="submit"
-        className={`
-          bg-blue-950 h-14 w-full md:w-1/4 rounded-md bg-primary text-lg font-bold text-white
-          hover:bg-blue-600
-        shadow focus:outline-none focus:ring
-        `}
-      >
-        Registrar Contrato
-      </button>
-    </Flex>
-  )
 }
 
 
@@ -116,7 +100,7 @@ export default function RegisterNewContract() {
               ))}
             </Select>
         </Form.Item>
-        <FormButton />
+        <FormButton text="Registrar Contrato" />
       </Form>
     </section>
   )

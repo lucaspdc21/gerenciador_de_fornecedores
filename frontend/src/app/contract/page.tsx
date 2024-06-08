@@ -1,4 +1,4 @@
-import PageTitle from "@/components/PageTitle";
+import PageTitle from "@/components/generic/PageTitle";
 import RegisterNewContract from "@/components/RegisterContract/RegisterContract";
 import { Flex } from "antd";
 
