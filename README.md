@@ -7,7 +7,7 @@ O projeto foi desenvolvido para o desafio de seleção do Insight Lab, ele consi
 O build do projeto é feito utilizando o Docker, permitindo criar umm ambiente isolado e replicável.
 [Download e documentação](https://www.docker.com/)
 
-Utilizamos esse comando para fazer o build do Spring e NextJS:
+Utilizamos esse comando para fazer o build do Spring Boot e NextJS:
 
 ```bash
 docker compose build
