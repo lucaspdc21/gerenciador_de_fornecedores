@@ -13,6 +13,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <title>Modulo de Fornecedores</title>
+        <link rel="icon" href="/company.svg" />
+      </head>
       <body>
         <HeaderComponent />
         <Layout hasSider style={{ minHeight: 'calc(100vh - 3.5rem)' }}>
