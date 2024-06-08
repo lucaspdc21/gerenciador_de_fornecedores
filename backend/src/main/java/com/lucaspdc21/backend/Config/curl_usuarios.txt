@@ -1,9 +1,0 @@
-curl -X POST -H "Content-Type: application/json" -d '{"nome": "Fornecedor 1", "descricao": "Descrição do Fornecedor 1", "email": "email1@fornecedor.com", "cnpj": "00.000.000/0001-01", "telefone": "(00) 0000-0001", "site": "www.fornecedor1.com", "endereco": "Rua do Fornecedor 1, 123"}' http://localhost:8080/api/suppliers
-
-curl -X POST -H "Content-Type: application/json" -d '{"nome": "Fornecedor 2", "descricao": "Descrição do Fornecedor 2", "email": "email2@fornecedor.com", "cnpj": "00.000.000/0001-02", "telefone": "(00) 0000-0002", "site": "www.fornecedor2.com", "endereco": "Rua do Fornecedor 2, 123"}' http://localhost:8080/api/suppliers
-
-curl -X POST -H "Content-Type: application/json" -d '{"nome": "Fornecedor 3", "descricao": "Descrição do Fornecedor 3", "email": "email3@fornecedor.com", "cnpj": "00.000.000/0001-03", "telefone": "(00) 0000-0003", "site": "www.fornecedor3.com", "endereco": "Rua do Fornecedor 3, 123"}' http://localhost:8080/api/suppliers
-
-curl -X POST -H "Content-Type: application/json" -d '{"nome": "Fornecedor 4", "descricao": "Descrição do Fornecedor 4", "email": "email4@fornecedor.com", "cnpj": "00.000.000/0001-04", "telefone": "(00) 0000-0004", "site": "www.fornecedor4.com", "endereco": "Rua do Fornecedor 4, 123"}' http://localhost:8080/api/suppliers
-
-curl -X POST -H "Content-Type: application/json" -d '{"nome": "Fornecedor 5", "descricao": "Descrição do Fornecedor 5", "email": "email5@fornecedor.com", "cnpj": "00.000.000/0001-05", "telefone": "(00) 0000-0005", "site": "www.fornecedor5.com", "endereco": "Rua do Fornecedor 5, 123"}' http://localhost:8080/api/suppliers

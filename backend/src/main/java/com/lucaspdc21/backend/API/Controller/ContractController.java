@@ -1,4 +1,4 @@
-package com.lucaspdc21.backend.Controller;
+package com.lucaspdc21.backend.API.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

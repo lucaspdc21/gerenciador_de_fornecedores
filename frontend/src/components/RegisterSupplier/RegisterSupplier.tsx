@@ -1,5 +1,5 @@
 "use client";
-import { Input, Form, Select, Switch, Space, DatePicker, Flex } from "antd"
+import { Input, Form, Select, Switch, Space, DatePicker } from "antd"
 import { SuppliersService } from "../../../services/SuppliersService"
 import FormButton from "../generic/FormButton";
 
@@ -43,7 +43,7 @@ export default function RegisterNewSupplier() {
 
 
   return (
-    <section className=" bg-white p-6">
+    <section className=" bg-white px-6">
       
       <Form layout="vertical" form={form} onFinish={onFinish}>
         <Form.Item
@@ -124,10 +124,10 @@ export default function RegisterNewSupplier() {
           <Form.Item>
             <Select size="large" placeholder="Setor envolvido">
               <Select.Option value="Grupo 1">Administrativo</Select.Option>
-              <Select.Option value="Grupo 1">TI</Select.Option>
-              <Select.Option value="Grupo 1">Engenharia</Select.Option>
-              <Select.Option value="Grupo 1">Design</Select.Option>
-              <Select.Option value="Grupo 1">RH</Select.Option>
+              <Select.Option value="Grupo 2">TI</Select.Option>
+              <Select.Option value="Grupo 3">Engenharia</Select.Option>
+              <Select.Option value="Grupo 4">Design</Select.Option>
+              <Select.Option value="Grupo 5">RH</Select.Option>
             </Select>
           </Form.Item>
           <Form.Item label="Contratos ativos:">
@@ -145,7 +145,7 @@ export default function RegisterNewSupplier() {
           </Form.Item>
         </Space>
         <Form.Item
-          name="description"
+          name="descricao"
           rules={[
             { required: true, message: "Por favor, insira uma descrição!" },
           ]}
