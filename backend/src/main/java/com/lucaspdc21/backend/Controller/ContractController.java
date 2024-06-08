@@ -1,4 +1,4 @@
-package com.lucaspdc21.backend.API.Controller;
+package com.lucaspdc21.backend.Controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
