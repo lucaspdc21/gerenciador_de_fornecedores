@@ -37,7 +37,6 @@ export default function RegisterNewSupplier() {
   const suppliersService = new SuppliersService()
   const onFinish = async (values: FormValues) => {
     try {
-      // Converta a data para o formato correto
   
       // Criação do objeto do fornecedor
       const supplier = {
@@ -141,7 +140,11 @@ export default function RegisterNewSupplier() {
         <Space className="flex flex-wrap" size={["middle", "small"]}>
           <Form.Item>
             <Select size="large" placeholder="Setor envolvido">
-              <Select.Option value="Grupo 1">Grupo 1</Select.Option>
+              <Select.Option value="Grupo 1">Administrativo</Select.Option>
+              <Select.Option value="Grupo 1">TI</Select.Option>
+              <Select.Option value="Grupo 1">Engenharia</Select.Option>
+              <Select.Option value="Grupo 1">Design</Select.Option>
+              <Select.Option value="Grupo 1">RH</Select.Option>
             </Select>
           </Form.Item>
           <Form.Item label="Contratos ativos:">

@@ -1,13 +1,13 @@
+import PageTitle from "@/components/PageTitle";
 import RegisterNewCourseForm from "@/components/Register";
-import { Flex, Layout } from "antd";
-import Title from "antd/lib/typography/Title";
+import { Flex} from "antd";
+
+
 
 export default function Home() {
     return (
         <Flex className="m-4" vertical>
-            <Flex align="center" >
-                <Title level={2} align-items>Cadastrar Fornecedores</Title>
-            </Flex>
+            <PageTitle title="Cadastrar Fornecedores" />
             <RegisterNewCourseForm />
         </Flex>   
     );
