@@ -19,11 +19,12 @@ const columns: TableColumnsType<DataType> = [
   { title: 'Nome', dataIndex: 'name', key: 'name' },
   { title: 'Valor', dataIndex: 'valor', key: 'valor' },
   { title: 'Status', dataIndex: 'status', key: 'status' },
-
 ];
 
 
 const ContractTable = ({ id }: ContractTableProps) => {
+
+  // pega as informações de contrato de um fornecedor (nome, valor e status)
   const [dataType, setDataType] = useState<DataType[]>([]);
   useEffect(() => {
     const sup_service = new SuppliersService();
@@ -54,7 +55,8 @@ const ContractTable = ({ id }: ContractTableProps) => {
     }}
     dataSource={dataType}
   />
+
   );
-  };
+};
 
 export default ContractTable;

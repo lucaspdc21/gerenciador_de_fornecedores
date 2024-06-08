@@ -6,7 +6,6 @@ import { SuppliersService } from '../../services/SuppliersService';
 
 const sup_service = new SuppliersService();
 
-
 async function deleteAndReload(setDataSource: (data: any) => void, id: number) {
     try {
         await sup_service.delete(id);
@@ -23,6 +22,7 @@ async function deleteAndReload(setDataSource: (data: any) => void, id: number) {
         console.error("Erro ao deletar fornecedor: ", error);
     }
 }
+
 async function loadSuppliers(setDataSource: (data: any) => void) {
     const response = await sup_service.listAll();
     const data = response.data;

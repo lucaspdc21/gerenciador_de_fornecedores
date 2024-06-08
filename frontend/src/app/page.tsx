@@ -1,4 +1,4 @@
-import ForTable from "@/components/ForTable";
+import ForTable from "@/components/SupplierList";
 import PageTitle from "@/components/PageTitle";
 import { Flex } from "antd";
 
