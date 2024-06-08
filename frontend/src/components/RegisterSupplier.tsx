@@ -22,7 +22,7 @@ function FormButton() {
         className={`
           bg-blue-950 h-14 w-full md:w-1/4 rounded-md bg-primary text-lg font-bold text-white
           hover:bg-blue-600
-        shadow focus:outline-none focus:ring
+          shadow focus:outline-none focus:ring
         `}
       >
         Registrar Fornecedor

@@ -1,5 +1,5 @@
 import PageTitle from "@/components/PageTitle";
-import RegisterNewContract from "@/components/RegisterContract";
+import RegisterNewContract from "@/components/RegisterContract/RegisterContract";
 import { Flex } from "antd";
 
 export default function Supplier() {

@@ -1,6 +1,8 @@
+/*eslint-disable*/ 
+//motivado por um falso positivo com o useEfect Hook
 "use client";
 import { Input, Form, Select, Flex } from "antd"
-import { SuppliersService } from "../../services/SuppliersService"
+import { SuppliersService } from "../../../services/SuppliersService"
 import { useEffect, useState } from "react";
 
 interface Supplier {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import HeaderComponent from "@/components/Header";
+import HeaderComponent from "@/components/Header/Header";
 import SiderComponent from "@/components/Sider";
 import { Flex, Layout } from "antd";
 import { Content } from "antd/es/layout/layout";

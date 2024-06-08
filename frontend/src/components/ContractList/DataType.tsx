@@ -1,3 +1,4 @@
+//interface para os contratos
 import React from 'react';
 
 export interface DataType {
