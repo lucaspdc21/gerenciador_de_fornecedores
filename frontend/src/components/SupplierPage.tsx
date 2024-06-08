@@ -1,7 +1,7 @@
 "use client";
 import { Avatar, Divider, Flex } from 'antd';
 import React, {Suspense, useEffect,useState} from 'react';
-import ContractTable from './ContractTable';
+import ContractTable from './ContractList/ContractTable';
 import { SuppliersService } from '../../services/SuppliersService';
 interface Suppliers {
     id: number;
