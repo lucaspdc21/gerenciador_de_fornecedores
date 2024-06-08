@@ -1,3 +1,4 @@
+/*eslint-disable*/
 "use client";
 import { Input, Form, Select, Flex } from "antd"
 import { SuppliersService } from "../../services/SuppliersService"

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-    baseURL: 'http://localhost:8080/',
+    baseURL: 'https://refactored-fortnight-jjrw49qx455hjq75-8080.app.github.dev/',
     headers: {
         'Content-Type': 'application/json',
     },

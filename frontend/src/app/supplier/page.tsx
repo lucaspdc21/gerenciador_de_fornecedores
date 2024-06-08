@@ -1,13 +1,15 @@
 "use client";
 import SuppliersComponent from "@/components/Suppliers";
 import { useParams, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
+interface Record {
+  id?: number;
 
-export default function Supplier() {
-  interface Record {
-    id?: number;
+}
 
-  }
+function Supplier1() {
+
   // recebimento das informações do supplier selecionado
   const [searchParams] = useSearchParams();
   const paramsObject = Object.fromEntries(Array.from(searchParams.entries()));
@@ -19,8 +21,15 @@ export default function Supplier() {
 
 
   return (
-    <div>
+    
       <SuppliersComponent id={record.id !== undefined ? record.id : 0}/>
-    </div>
+
+  );
+}
+export default function Supplier(){
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Supplier1/>
+    </Suspense>
   );
 }
