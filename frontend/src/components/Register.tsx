@@ -39,7 +39,7 @@ export default function RegisterNewSupplier() {
     try {
       // Converta a data para o formato correto
   
-      // Crie o objeto do fornecedor
+      // Criação do objeto do fornecedor
       const supplier = {
         nome: values.nome,
         descricao: values.descricao,
@@ -49,9 +49,8 @@ export default function RegisterNewSupplier() {
         telefone: values.telefone,
         endereco: values.endereco,
     
-        // Adicione outros campos conforme necessário
       };
-      // Chame o método create do SuppliersService
+      // response caso seja necessário	
       const response = await suppliersService.create(supplier);
       alert("Fornecedor registrado com sucesso!");
     } catch (error) {

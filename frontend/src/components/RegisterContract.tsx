@@ -1,10 +1,7 @@
-/*eslint-disable*/
 "use client";
 import { Input, Form, Select, Flex } from "antd"
 import { SuppliersService } from "../../services/SuppliersService"
 import { useEffect, useState } from "react";
-
-const { TextArea } = Input
 
 interface Supplier {
   key: number;
@@ -71,7 +68,7 @@ export default function RegisterNewContract() {
         }));
         setSuppliers(formattedData); 
       });
-  }, []);
+  }, [suppliersService]);
 
 
   return (
@@ -102,14 +99,14 @@ export default function RegisterNewContract() {
           <Input placeholder="Insira o valor do contrato" size="large" />
         </Form.Item>
         <Form.Item name="status">
-            <Select size="large" placeholder="Setor envolvido">
+            <Select size="large" placeholder="Status">
               <Select.Option value="PENDENTE">PENDENTE</Select.Option>
               <Select.Option value="EM_ANDAMENTO">EM_ANDAMENTO</Select.Option>
               <Select.Option value="FINALIZADO">FINALIZADO</Select.Option>
             </Select>
         </Form.Item>
         <Form.Item name="supplier">
-            <Select size="large" placeholder="Setor envolvido">
+            <Select size="large" placeholder="Fornecedor">
               {suppliers.map(supplier => ( // mapeia os fornecedores para criar as opções do Select
                 <Select.Option key={supplier.key} value={supplier.key}>
                   {supplier.name}

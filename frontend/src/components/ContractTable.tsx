@@ -1,4 +1,3 @@
-/*eslint-disable*/
 "use client";
 import React, { useEffect, useState } from 'react';
 import { Table } from 'antd';
@@ -20,13 +19,7 @@ const columns: TableColumnsType<DataType> = [
   { title: 'Nome', dataIndex: 'name', key: 'name' },
   { title: 'Valor', dataIndex: 'valor', key: 'valor' },
   { title: 'Status', dataIndex: 'status', key: 'status' },
-  {
-    
-    title: 'Action',
-    dataIndex: '',
-    key: 'x',
-    render: () => <a>Delete</a>,
-  },
+
 ];
 
 
@@ -47,7 +40,7 @@ const ContractTable = ({ id }: ContractTableProps) => {
       .catch(error => {
         console.error(error);
       });
-  }, []);
+  }, [id]);
 
   return(
   <Table

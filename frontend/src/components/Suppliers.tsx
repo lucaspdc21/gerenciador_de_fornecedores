@@ -1,4 +1,3 @@
-/*eslint-disable*/
 "use client";
 import { Avatar, Divider, Flex } from 'antd';
 import React, {Suspense, useEffect,useState} from 'react';
@@ -30,7 +29,7 @@ const SuppliersComponent = ({ id }: SuppliersComponentProps) => {
             .catch(error => {
                 console.error(error);
             });
-    }, []);
+    }, [id]);
     if (!suppliers){
         return <div>Loading...</div>
     }

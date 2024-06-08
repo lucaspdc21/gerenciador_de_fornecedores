@@ -1,6 +1,5 @@
 import { Avatar } from 'antd';
 import React from 'react';
-import Sider from 'antd/es/layout/Sider';
 import Image from 'next/image';
 
 const HeaderComponent = () => {
