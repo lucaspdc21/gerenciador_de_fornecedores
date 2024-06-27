@@ -1,6 +1,6 @@
 # Gerenciador de fornecedores
 
-O projeto foi desenvolvido para o desafio de seleção do Insight Lab, ele consiste em um módulo onde é possível gerenciar fornecedores e seus contratos.
+O projeto consiste em um módulo onde é possível gerenciar fornecedores e seus contratos.
 
 ### Rodando a aplicação
 
